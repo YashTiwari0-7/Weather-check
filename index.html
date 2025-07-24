@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <title>Weather App</title>
+  </head>
+  <body>
+    <div id="app">
+      <div class="container">
+        <header>
+          <h1>🌤️ Weather App</h1>
+          <p>Get current weather information for any city worldwide</p>
+        </header>
+
+        <div class="search-container">
+          <input 
+            type="text" 
+            id="cityInput" 
+            placeholder="Enter Indian city name (e.g., Mumbai, Delhi, Bangalore)"
+            autocomplete="off"
+          />
+          <button id="searchBtn">
+            <span>🔍</span>
+            Search Weather
+          </button>
+        </div>
+
+        <div id="loading" class="loading hidden">
+          <div class="spinner"></div>
+          <p>Loading weather data...</p>
+        </div>
+
+        <div id="error" class="error hidden">
+          <p id="errorMessage"></p>
+        </div>
+
+        <div id="weatherCard" class="weather-card hidden">
+          <div class="weather-header">
+            <h2 id="cityName"></h2>
+            <p id="date"></p>
+          </div>
+          
+          <div class="weather-main">
+            <div class="temperature-section">
+              <img id="weatherIcon" src="" alt="Weather icon" />
+              <div class="temperature">
+                <span id="temp"></span>
+                <span class="unit">°C</span>
+              </div>
+            </div>
+            
+            <div class="weather-description">
+              <h3 id="description"></h3>
+              <p>Feels like <span id="feelsLike"></span>°C</p>
+            </div>
+          </div>
+
+          <div class="weather-details">
+            <div class="detail-item">
+              <span class="detail-label">💧 Humidity</span>
+              <span id="humidity"></span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">💨 Wind Speed</span>
+              <span id="windSpeed"></span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">👁️ Visibility</span>
+              <span id="visibility"></span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">🌡️ Pressure</span>
+              <span id="pressure"></span>
+            </div>
+          </div>
+        </div>
+
+        <div id="suggestions" class="suggestions hidden">
+          <h3>Popular Indian Cities:</h3>
+          <div class="city-buttons">
+            <button class="city-btn" data-city="Mumbai">Mumbai</button>
+            <button class="city-btn" data-city="Delhi">Delhi</button>
+            <button class="city-btn" data-city="Bangalore">Bangalore</button>
+            <button class="city-btn" data-city="Chennai">Chennai</button>
+            <button class="city-btn" data-city="Kolkata">Kolkata</button>
+            <button class="city-btn" data-city="Hyderabad">Hyderabad</button>
+            <button class="city-btn" data-city="Pune">Pune</button>
+            <button class="city-btn" data-city="Ahmedabad">Ahmedabad</button>
+            <button class="city-btn" data-city="Jaipur">Jaipur</button>
+            <button class="city-btn" data-city="Lucknow">Lucknow</button>
+            <button class="city-btn" data-city="Kochi">Kochi</button>
+            <button class="city-btn" data-city="Goa">Goa</button>
+          </div>
+        </div>
+
+        <footer>
+          <p>Weather data provided by OpenWeatherMap</p>
+        </footer>
+      </div>
+    </div>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>
